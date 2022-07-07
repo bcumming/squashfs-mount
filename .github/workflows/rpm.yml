@@ -1,0 +1,13 @@
+jobs:
+  build:
+    name: build-rpm
+    runs-on: ubuntu-20.04
+    container: bcumming/bci-base-rpmbuilder:testing
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build srpm
+        run: |
+          pwd
+          ls -ahl
+
