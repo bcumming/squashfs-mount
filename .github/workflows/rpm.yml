@@ -1,6 +1,7 @@
+name: build-rpm
+on: [push]
 jobs:
   build:
-    name: build-rpm
     runs-on: ubuntu-20.04
     container: bcumming/bci-base-rpmbuilder:testing
     steps:
