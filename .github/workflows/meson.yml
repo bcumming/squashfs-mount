@@ -15,6 +15,6 @@ jobs:
           mkdir build
           cd build
           meson ..
-          meson build
+          meson compile
           sudo meson install
 
