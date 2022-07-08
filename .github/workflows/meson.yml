@@ -23,6 +23,6 @@ jobs:
           mkdir test-dir
           echo "hello world" test-dir/test.txt
           mksquashfs test-dir fs.sqsh
-          sudo mkdir /mount
-          squashfs-mount fs.sqsh /mount cat /mount/test.txt
+          sudo mkdir /mntpnt
+          squashfs-mount fs.sqsh /mount ls
 
