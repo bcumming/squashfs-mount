@@ -1,4 +1,4 @@
-name: build-rpm
+name: meson
 on: [push]
 jobs:
   build:
@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: setup
-        run: apt-get install meson
+        run: sudo apt-get install meson ninja util-linux
       - name: build
         run: |
           mkdir build
