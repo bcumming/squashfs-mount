@@ -21,8 +21,8 @@ jobs:
       - name: test
         run: |
           mkdir test-dir
-          echo "hello world" test-dir/test.txt
+          echo "hello world" >> test-dir/test.txt
           mksquashfs test-dir fs.sqsh
           sudo mkdir /mntpnt
-          squashfs-mount fs.sqsh /mount ls
+          squashfs-mount fs.sqsh /mntpnt cat /mntpnt/test.txt
 
