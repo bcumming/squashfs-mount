@@ -9,12 +9,13 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y ninja-build util-linux libmount-dev
-          pip3 install --user meson
+          # can't install as user because we need `sudo meson install` later
+          sudo pip3 install meson
       - name: build
         run: |
           mkdir build
           cd build
           meson ..
           meson compile
-          sudo $(which meson) install
+          sudo meson install
 
