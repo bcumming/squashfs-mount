@@ -13,6 +13,7 @@ jobs:
         run: |
           mkdir build
           cd build
+          meson ..
           meson build
           sudo meson install
 
