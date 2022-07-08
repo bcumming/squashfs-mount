@@ -1,0 +1,16 @@
+name: build-rpm
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup
+        run: apt-get install meson
+      - name: build
+        run: |
+          mkdir build
+          cd build
+          meson build
+          sudo meson install
+
