@@ -11,6 +11,7 @@ jobs:
           make rpm
           make install-suid
       - name: tag release
+        if: startsWith(github.event.ref, 'refs/tags/v') # only release when pusing to a tag.
         run: |
           echo "hello"
           pwd
