@@ -10,10 +10,6 @@ jobs:
         run: |
           make rpm
           make install-suid
-  release:
-    runs-on: ubuntu-20.04
-    container: bcumming/bci-base-rpmbuilder:testing
-    steps:
       - name: tag release
         run: |
           echo "hello"
