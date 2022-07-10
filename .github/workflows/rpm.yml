@@ -1,13 +1,20 @@
 name: build-rpm
 on: [push]
 jobs:
+  runs-on: ubuntu-20.04
+  container: bcumming/bci-base-rpmbuilder:testing
   build:
-    runs-on: ubuntu-20.04
-    container: bcumming/bci-base-rpmbuilder:testing
     steps:
       - uses: actions/checkout@v2
       - name: build srpm
         run: |
           make rpm
           make install-suid
+  release:
+    steps:
+      - name: tag release
+        run: |
+          echo "hello"
+          pwd
+          which squashfs-mount
 
