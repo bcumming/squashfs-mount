@@ -2,3 +2,5 @@
 *.squashfs
 squashfs-mount
 rpmbuild
+*.sqsh
+test-dir
