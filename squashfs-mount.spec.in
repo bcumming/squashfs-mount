@@ -19,7 +19,7 @@ A small setuid binary that mounts a squashfs image in a mount namespace then exe
 make %{?_smp_mflags}
 
 %install
-sudo make install prefix=%{_prefix} DESTDIR=%{buildroot}
+sudo make install-suid prefix=%{_prefix} DESTDIR=%{buildroot}
 
 %files
 %license LICENSE
