@@ -3,7 +3,10 @@ on: [push, pull_request]
 
 jobs:
   makefile:
-    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, ubuntu-24.04-arm]}
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - name: setup
@@ -30,7 +33,10 @@ jobs:
           /bats-core-1.9.0/bin/bats ci/tests.bats
 
   meson:
-    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, ubuntu-24.04-arm]}
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - name: setup

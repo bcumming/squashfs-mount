@@ -6,7 +6,10 @@ on: [push, pull_request]
 
 jobs:
   rpm:
-    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, ubuntu-24.04-arm]}
+    runs-on: ${{ matrix.os }}
     container: registry.suse.com/bci/bci-base:15.3
     steps:
       - name: setup-environment
